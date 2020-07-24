@@ -53,10 +53,10 @@
         </fieldset>
         
         <label for="population">Estimated Population in the Wild</label>
-        <input type="number" name="population" id="population">
+        <input type="number" name="population" id="population" min="0" required>
 
         <label for="conservation-status">Conservation Status</label>
-        <select name="conservationStatus" id="conservation-status">
+        <select name="conservationStatus" id="conservation-status" required>
             <option disabled selected>Select one</option>
             <option value="EX">EX (Extinct)</option>
             <option value="EW">EW (Extinct in the wild)</option>
