@@ -80,6 +80,12 @@ const populateSpeciesListItem = (listItem, data) => {
     addListItem(body, "Range", rangeDisplay(data.range));
     addListItem(body, "Habitat", data.habitat);
     listItem.appendChild(body);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", handleDeleteClick);
+    listItem.appendChild(deleteButton);
 };
 
 
@@ -104,7 +110,13 @@ const handleDeleteAllClick = function () {
     console.log("Deleting all species in list...")
     const speciesList = document.querySelector("#species-list");
     speciesList.innerHTML = "";
-}
+};
+
+const handleDeleteClick = function () {
+    console.log("=".repeat(40));
+    console.log("Deleting species entry...")
+    this.parentNode.remove();
+};
 
 
 // DOM INTERACTIONS
