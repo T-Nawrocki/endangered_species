@@ -34,31 +34,28 @@ const getSpeciesTitle = data => {
     return data.commonName ? data.commonName : data.scientificName;
 };
 
-const addListItem = (parent, text) => {
+const addListItem = (parent, heading, text) => {
     const newListItem = document.createElement("li");
-    newListItem.textContent = text;
+    newListItem.innerHTML = `<b>${heading}</b>: ${text}`;
     parent.appendChild(newListItem);
 };
 
 const conservationStatusDisplay = status => {
     const displayList = {
         EX: "EX (Extinct",
-        EW: "EW (Extinct in the wild",
-        CR: "CR (Critically endangered)",
+        EW: "EW (Extinct in the Wild",
+        CR: "CR (Critically Endangered)",
         EN: "EN (Endangered)",
         VU: "VU (Vulnerable)",
-        NT: "NT (Near threatened)",
-        LC: "LC (Least concern)",
-        DD: "DD (Data deficient)",
-        NE: "NE (Not evaluated)"
+        NT: "NT (Near Threatened)",
+        LC: "LC (Least Concern)",
+        DD: "DD (Data Deficient)",
+        NE: "NE (Not Evaluated)"
     };
-    return `Conservation Status: ${displayList[status]}`
+    return displayList[status]
 };
 
-const rangeDisplay = rangeList => {
-    const range =  rangeList.join(", ")
-    return `Range: ${range}`
-};
+const rangeDisplay = rangeList => rangeList.join(", ");
 
 const populateSpeciesListItem = (listItem, data) => {
     const title = document.createElement("h2");
@@ -75,14 +72,16 @@ const populateSpeciesListItem = (listItem, data) => {
 
     const body = document.createElement("ul");
     body.classList.add("species-body");
-    addListItem(body, conservationStatusDisplay(data.conservationStatus));
-    addListItem(body, `Estimated Population in the Wild: ${data.population}`);
-    addListItem(body, rangeDisplay(data.range));
-    addListItem(body, `Habitat: ${data.habitat}`);
+    addListItem(
+        body,
+        "Conservation Status",
+        conservationStatusDisplay(data.conservationStatus)
+    );
+    addListItem(body, "Estimated Population in the Wild", data.population);
+    addListItem(body, "Range", rangeDisplay(data.range));
+    addListItem(body, "Habitat", data.habitat);
     listItem.appendChild(body);
 };
-
-
 
 
 // EVENT HANDLERS
