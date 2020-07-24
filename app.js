@@ -27,7 +27,6 @@ const logValues = data => {
     console.log('range :>> ', data.range);
     console.log('population :>> ', data.population);
     console.log('conservationStatus :>> ', data.conservationStatus);
-    console.log("=".repeat(40));
 };
 
 const getSpeciesTitle = data => {
@@ -100,6 +99,13 @@ const handleNewSpecies = function () {
     this.reset();
 };
 
+const handleDeleteAllClick = function () {
+    console.log("=".repeat(40));
+    console.log("Deleting all species in list...")
+    const speciesList = document.querySelector("#species-list");
+    speciesList.innerHTML = "";
+}
+
 
 // DOM INTERACTIONS
 document.addEventListener("DOMContentLoaded", () => {
@@ -107,4 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const newSpeciesForm = document.querySelector("#new-species-form");
     newSpeciesForm.addEventListener("submit", handleNewSpecies);
+
+    const deleteAllButton = document.querySelector("#delete-all");
+    deleteAllButton.addEventListener("click", handleDeleteAllClick);
 });
