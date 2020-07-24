@@ -25,6 +25,8 @@ const handleNewAnimal = function () {
     console.log('range :>> ', range);
     console.log('population :>> ', population);
     console.log('conservationStatus :>> ', conservationStatus);
+
+    this.reset();
 };
 
 
