@@ -1,28 +1,62 @@
 :root {
-    --light: #CFD186;
-    --mid: #5B8C5A;
-    --dark: #596157;
-    --text: #52414C;
-    --alt: #E3655B;
-    --v-light: #E7E9C4;
+    --light: #E9EAEC;
+    --dark: #8D6A9F;
+    --text: #343434;
+    --mid: #E5625E;
+    --v-light: white;
+    --alt: #009FB7;
 }
 
 body {
-    background-color: var(--light);
+    margin: 5%;
+    background-color: var(--text);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: var(--text);
 }
 
+.button {
+    
+}
+
+.heading, .content {
+    padding: 20px;
+    background-color: var(--light);
+}
+
 .heading {
+    display:inline-block;
+    margin-bottom: 0px;
+    border-radius: 25px 25px 0px 0px;
     font-family: "Hoefler Text", "Palatino", "Georgia", "Garamond", serif;
+}
+
+.heading:after {
+    content: "";
+    display: block;
+    margin: 0, auto;
+    padding-top: 10px;
+    border-bottom: 3px solid var(--mid);
+}
+
+.content {
+    margin-top: 0px;
+    border-radius: 0px 25px 25px 25px;
+}
+
+#form-container {
+    margin-bottom: 2%;
 }
 
 #new-species-form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 60%;
 
-    background: pink;
+    /* background: pink; */
+}
+
+#new-species-form > * {
+    margin: 10px;
 }
 
 #form-top-row, #form-bottom-row {
@@ -30,7 +64,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 
-    background: aqua;
+    /* background: aqua; */
 }
 
 
@@ -38,10 +72,38 @@ body {
     width: 180px;
 }
 
-.form-item * {
+.form-item > * {
     display: block;
-    /* max-width: 160px; select doesn't inherit from form-item, apparently */
 
-    background: yellow;
+    /* background: yellow; */
 }
 
+#range-checklist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) 10px 1fr;
+}
+
+#atlantic-checkbox-item {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+#indian-checkbox-item {
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+#pacific-checkbox-item {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+}
+
+#species-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#species-list * {
+    list-style: none;
+    padding-left: 0px;
+}

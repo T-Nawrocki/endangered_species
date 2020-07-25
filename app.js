@@ -85,7 +85,7 @@ const populateSpeciesListItem = (listItem, data) => {
     listItem.appendChild(body);
 
     const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete");
+    deleteButton.classList.add("delete", "button");
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", handleDeleteClick);
     listItem.appendChild(deleteButton);
