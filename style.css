@@ -1,10 +1,10 @@
 :root {
     --light: #E9EAEC;
+    --mid: #D0C1D7;
     --dark: #8D6A9F;
     --text: #343434;
-    --mid: #E5625E;
     --v-light: white;
-    --alt: #009FB7;
+    --alt: #E5625E;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
     display: block;
     margin: 0, auto;
     padding-top: 10px;
-    border-bottom: 3px solid var(--mid);
+    border-bottom: 3px solid var(--dark);
 }
 
 .content {
@@ -109,12 +109,18 @@ body {
 
 .species-item {
     min-height: 200px;
-    width: 45%;
+    width: 40%;
     min-width: 300px;
     margin: 20px;
-    padding:5px;
-    
-    background: pink;
+    border: 3px var(--dark) solid;
+    border-radius: 15px;
+    padding:20px;
+    background-color: var(--mid);
+}
+
+.species-title-row {
+    display: flex;
+    justify-content: space-between;
 }
 
 .species-title {
@@ -125,6 +131,15 @@ body {
     font-style: italic;
 }
 
+.species-body:before {
+    content: "";
+    display: block;
+    margin: 20px 0px;
+    border-bottom: 3px solid var(--dark);
+}
+
 .species-body {
     padding-left: 0px;
 }
+
+

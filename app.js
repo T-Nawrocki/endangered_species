@@ -83,10 +83,21 @@ const createSpeciesList = () => {
 };
 
 const populateSpeciesListItem = (listItem, data) => {
+    const titleRow = document.createElement("div");
+    titleRow.classList.add("species-title-row");
+    
     const title = document.createElement("h2");
     title.classList.add("species-title");
     title.textContent = getSpeciesTitle(data);
-    listItem.appendChild(title);
+    titleRow.appendChild(title);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete", "button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", handleDeleteClick);
+    titleRow.appendChild(deleteButton);
+
+    listItem.appendChild(titleRow);
 
     if (data.commonName) {
         const subtitle = document.createElement("h3");
@@ -107,13 +118,8 @@ const populateSpeciesListItem = (listItem, data) => {
     addListItem(body, "Habitat", data.habitat);
     addListItem(body, "Diet", data.diet);
     listItem.appendChild(body);
-
-    const deleteButton = document.createElement("button");
-    deleteButton.classList.add("delete", "button");
-    deleteButton.textContent = "Delete";
-    deleteButton.addEventListener("click", handleDeleteClick);
-    listItem.appendChild(deleteButton);
 };
+    
 
 
 // EVENT HANDLERS
