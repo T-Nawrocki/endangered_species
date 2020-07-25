@@ -18,6 +18,8 @@ const parseData = data => {
     };
 };
 
+const rangeAnswered = data => data.range[0];
+
 const logValues = data => {
     console.log("=".repeat(40));
     console.log("New Species Submitted with the following data:");
@@ -98,14 +100,19 @@ const handleNewSpecies = function () {
 
     const data = parseData(this);
     logValues(data);
-    
-    const newSpeciesListItem = document.createElement("li");
-    populateSpeciesListItem(newSpeciesListItem, data)
-    
-    const speciesList = document.querySelector("#species-list");
-    speciesList.appendChild(newSpeciesListItem);
 
-    this.reset();
+    if (rangeAnswered(data)) {
+        const newSpeciesListItem = document.createElement("li");
+        newSpeciesListItem.classList.add("species-item")
+        populateSpeciesListItem(newSpeciesListItem, data)
+        
+        const speciesList = document.querySelector("#species-list");
+        speciesList.appendChild(newSpeciesListItem);
+
+        this.reset();
+    } else {
+        alert("Please enter the species' range.")
+    }
 };
 
 const handleDeleteAllClick = function () {
