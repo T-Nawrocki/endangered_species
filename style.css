@@ -1,0 +1,47 @@
+:root {
+    --light: #CFD186;
+    --mid: #5B8C5A;
+    --dark: #596157;
+    --text: #52414C;
+    --alt: #E3655B;
+    --v-light: #E7E9C4;
+}
+
+body {
+    background-color: var(--light);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--text);
+}
+
+.heading {
+    font-family: "Hoefler Text", "Palatino", "Georgia", "Garamond", serif;
+}
+
+#new-species-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    background: pink;
+}
+
+#form-top-row, #form-bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background: aqua;
+}
+
+
+.form-item {
+    max-width: 160px;
+}
+
+.form-item * {
+    display: block;
+    max-width: 160px; /* select doesn't inherit from form-item, apparently */
+
+    background: yellow;
+}
+

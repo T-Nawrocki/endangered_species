@@ -9,75 +9,151 @@
 </head>
 <body>
     <div id="form-container">
+        <h1 class="heading">Add New Species</h1>
         <form id="new-species-form">
-            <h1>Add New Species</h1>
-
-            <label for="common-name">Common Name</label>
-            <input type="text" name="commonName" id="common-name">
-
-            <label for="scientific-name">Scientific Name</label>
-            <input type="text" name="scientificName" id="scientific-name" required>
-
-            <label for="habitat">Habitat</label>
-            <input type="text" name="habitat" id="habitat" required>
+            <div id="form-top-row">
+                <div class="form-item">
+                    <label for="common-name">Common Name</label>
+                    <input type="text" name="commonName" id="common-name">
+                </div>
+                
+                <div class="form-item">
+                    <label for="scientific-name">Scientific Name</label>
+                    <input type="text" 
+                        name="scientificName" 
+                        id="scientific-name" 
+                        required>
+                </div>
+                
+                <div class="form-item">
+                    <label for="habitat">Habitat</label>
+                    <input type="text" name="habitat" id="habitat" required>
+                </div>
+            </div>
 
             <fieldset>
                 <legend>Range (select all that apply)</legend>
-                <input type="checkbox" name="range" id="africa-checkbox" value="Africa">
-                <label for="africa-checkbox">Africa</label>
-
-                <input type="checkbox" name="range" id="antarctica-checkbox" value="Antarctica">
-                <label for="antarctica-checkbox">Antarctica</label>
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="africa-checkbox" 
+                           value="Africa">
+                    <label for="africa-checkbox">Africa</label>
+                </div>
                 
-                <input type="checkbox" name="range" id="asia-checkbox" value="Asia">
-                <label for="asia-checkbox">Asia</label>
-
-                <input type="checkbox" name="range" id="europe-checkbox" value="Europe">
-                <label for="Europe-checkbox">Europe</label>
-
-                <input type="checkbox" name="range" id="north-america-checkbox" value="North America">
-                <label for="north-america-checkbox">North America</label>
-
-                <input type="checkbox" name="range" id="oceania-checkbox" value="Oceania">
-                <label for="oceania-checkbox">Oceania</label>
-
-                <input type="checkbox" name="range" id="south-america-checkbox" value="South America">
-                <label for="south-america-checkbox">South America</label>
-
-                <input type="checkbox" name="range" id="atlantic-checkbox" value="Atlantic Ocean">
-                <label for="atlantic-checkbox">Atlantic Ocean</label>
-
-                <input type="checkbox" name="range" id="indian-checkbox" value="Indian Ocean">
-                <label for="indian-checkbox">Indian Ocean</label>
-
-                <input type="checkbox" name="range" id="pacific-checkbox" value="Pacific Ocean">
-                <label for="pacific-checkbox">Pacific Ocean</label>
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="antarctica-checkbox" 
+                           value="Antarctica">
+                    <label for="antarctica-checkbox">Antarctica</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="asia-checkbox" 
+                           value="Asia">
+                    <label for="asia-checkbox">Asia</label>
+                </div>
+                
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="europe-checkbox" 
+                           value="Europe">
+                    <label for="Europe-checkbox">Europe</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="north-america-checkbox" 
+                           value="North America">
+                    <label for="north-america-checkbox">North America</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="oceania-checkbox" 
+                           value="Oceania">
+                    <label for="oceania-checkbox">Oceania</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="south-america-checkbox" 
+                           value="South America">
+                    <label for="south-america-checkbox">South America</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="atlantic-checkbox" 
+                           value="Atlantic Ocean">
+                    <label for="atlantic-checkbox">Atlantic Ocean</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="indian-checkbox" 
+                           value="Indian Ocean">
+                    <label for="indian-checkbox">Indian Ocean</label>
+                </div>
+            
+                <div class="form-checkbox">
+                    <input type="checkbox" 
+                           name="range" 
+                           id="pacific-checkbox" 
+                           value="Pacific Ocean">
+                    <label for="pacific-checkbox">Pacific Ocean</label>
+                </div>
             </fieldset>
             
-            <label for="population">Estimated Population in the Wild</label>
-            <input type="number" name="population" id="population" min="0" required>
+            <div id="form-bottom-row">
+                <div class="form-item">
+                    <label for="population">
+                        Estimated Population in the Wild
+                    </label>
+                    <input type="number" 
+                        name="population" 
+                        id="population" 
+                        min="0" 
+                        required>
+                </div>
 
-            <label for="conservation-status">Conservation Status</label>
-            <select name="conservationStatus" id="conservation-status" required>
-                <option disabled selected>Select one</option>
-                <option value="EX">EX (Extinct)</option>
-                <option value="EW">EW (Extinct in the Wild)</option>
-                <option value="CR">CR (Critically Endangered)</option>
-                <option value="EN">EN (Endangered)</option>
-                <option value="VU">VU (Vulnerable)</option>
-                <option value="NT">NT (Near Threatened)</option>
-                <option value="LC">LC (Least Concern)</option>
-                <option value="DD">DD (Data Deficient)</option>
-                <option value="NE">NE (Not Evaluated)</option>
-            </select>
+                <div class="form-item">
+                    <label for="conservation-status">Conservation Status</label>
+                    <select name="conservationStatus" 
+                            id="conservation-status" 
+                            required>
+                        <option disabled selected>Select one</option>
+                        <option value="EX">EX (Extinct)</option>
+                        <option value="EW">EW (Extinct in the Wild)</option>
+                        <option value="CR">CR (Critically Endangered)</option>
+                        <option value="EN">EN (Endangered)</option>
+                        <option value="VU">VU (Vulnerable)</option>
+                        <option value="NT">NT (Near Threatened)</option>
+                        <option value="LC">LC (Least Concern)</option>
+                        <option value="DD">DD (Data Deficient)</option>
+                        <option value="NE">NE (Not Evaluated)</option>
+                    </select>
+                </div>
+            </div>
 
-            <input type="submit" value="Save">
+            <div id="form-buttons">
+                <input type="submit" value="Save">
+                <button id="delete-all">Delete All</button>
+            </div>
         </form>
-        <button id="delete-all">Delete All</button>
     </div>
 
     <div id="species-list-container">
-        <h1>Species</h1>
+        <h1 class="heading">Species</h1>
         <ul id="species-list"></ul>
     </div>
     
