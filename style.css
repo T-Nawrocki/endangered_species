@@ -105,9 +105,26 @@ body {
 
 #species-list * {
     list-style: none;
-    padding-left: 0px;
 }
 
 .species-item {
+    min-height: 200px;
+    width: 45%;
+    min-width: 300px;
+    margin: 20px;
+    padding:5px;
+    
     background: pink;
+}
+
+.species-title {
+    margin:0;
+}
+.species-subtitle {
+    margin:0;
+    font-style: italic;
+}
+
+.species-body {
+    padding-left: 0px;
 }

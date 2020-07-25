@@ -60,6 +60,28 @@ const conservationStatusDisplay = status => {
 
 const rangeDisplay = rangeList => rangeList.join(", ");
 
+const createSpeciesList = () => {
+    console.log("=".repeat(40));
+    console.log("Creating species list...")
+
+    const container = document.createElement("div");
+    container.id = "species-list-container";
+
+    const heading = document.createElement("h1");
+    heading.classList.add("heading");
+    heading.textContent = "Species";
+    container.appendChild(heading);
+
+    const list = document.createElement("ul");
+    list.id = "species-list";
+    list.classList.add("content");
+    container.appendChild(list);
+
+    const body = document.querySelector("body");
+    body.appendChild(container);
+    console.log("Species list created");
+};
+
 const populateSpeciesListItem = (listItem, data) => {
     const title = document.createElement("h2");
     title.classList.add("species-title");
@@ -102,16 +124,21 @@ const handleNewSpecies = function () {
     logValues(data);
 
     if (rangeAnswered(data)) {
+        let speciesList = document.querySelector("#species-list");
+        if (!speciesList) {createSpeciesList();}
+
         const newSpeciesListItem = document.createElement("li");
-        newSpeciesListItem.classList.add("species-item")
-        populateSpeciesListItem(newSpeciesListItem, data)
+        newSpeciesListItem.classList.add("species-item");
+        populateSpeciesListItem(newSpeciesListItem, data);
         
-        const speciesList = document.querySelector("#species-list");
+        speciesList = document.querySelector("#species-list");
         speciesList.appendChild(newSpeciesListItem);
 
         this.reset();
     } else {
-        alert("Please enter the species' range.")
+        console.log("=".repeat(40));
+        console.log("Failed to save species: no range provided.");
+        alert("Please enter the species' range.");
     }
 };
 
