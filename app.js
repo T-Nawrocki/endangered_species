@@ -10,10 +10,11 @@ const parseData = data => {
     return {
         commonName: data.commonName.value,
         scientificName: data.scientificName.value,
-        habitat: data.habitat.value,
+        conservationStatus: data.conservationStatus.value,
         range: arrayFromChecklist(data.range),
         population: data.population.value,
-        conservationStatus: data.conservationStatus.value  
+        habitat: data.habitat.value,
+        diet: data.diet.value
     };
 };
 
@@ -23,10 +24,11 @@ const logValues = data => {
     console.log("-".repeat(40));
     console.log('commonName :>> ', data.commonName);
     console.log('scientificName :>> ', data.scientificName);
-    console.log('habitat :>> ', data.habitat);
+    console.log('conservationStatus :>> ', data.conservationStatus);
     console.log('range :>> ', data.range);
     console.log('population :>> ', data.population);
-    console.log('conservationStatus :>> ', data.conservationStatus);
+    console.log('habitat :>> ', data.habitat);
+    console.log('diet :>> ', data.diet);
 };
 
 const getSpeciesTitle = data => {
@@ -79,6 +81,7 @@ const populateSpeciesListItem = (listItem, data) => {
     addListItem(body, "Estimated Population in the Wild", data.population);
     addListItem(body, "Range", rangeDisplay(data.range));
     addListItem(body, "Habitat", data.habitat);
+    addListItem(body, "Diet", data.diet);
     listItem.appendChild(body);
 
     const deleteButton = document.createElement("button");

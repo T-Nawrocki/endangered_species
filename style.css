@@ -35,12 +35,12 @@ body {
 
 
 .form-item {
-    max-width: 160px;
+    width: 180px;
 }
 
 .form-item * {
     display: block;
-    max-width: 160px; /* select doesn't inherit from form-item, apparently */
+    /* max-width: 160px; select doesn't inherit from form-item, apparently */
 
     background: yellow;
 }

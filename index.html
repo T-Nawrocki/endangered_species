@@ -24,10 +24,23 @@
                         id="scientific-name" 
                         required>
                 </div>
-                
+
                 <div class="form-item">
-                    <label for="habitat">Habitat</label>
-                    <input type="text" name="habitat" id="habitat" required>
+                    <label for="conservation-status">Conservation Status</label>
+                    <select name="conservationStatus" 
+                            id="conservation-status" 
+                            required>
+                        <option disabled selected>Select one</option>
+                        <option value="EX">EX (Extinct)</option>
+                        <option value="EW">EW (Extinct in the Wild)</option>
+                        <option value="CR">CR (Critically Endangered)</option>
+                        <option value="EN">EN (Endangered)</option>
+                        <option value="VU">VU (Vulnerable)</option>
+                        <option value="NT">NT (Near Threatened)</option>
+                        <option value="LC">LC (Least Concern)</option>
+                        <option value="DD">DD (Data Deficient)</option>
+                        <option value="NE">NE (Not Evaluated)</option>
+                    </select>
                 </div>
             </div>
 
@@ -117,7 +130,7 @@
             <div id="form-bottom-row">
                 <div class="form-item">
                     <label for="population">
-                        Estimated Population in the Wild
+                        Estimated Population
                     </label>
                     <input type="number" 
                         name="population" 
@@ -127,22 +140,22 @@
                 </div>
 
                 <div class="form-item">
-                    <label for="conservation-status">Conservation Status</label>
-                    <select name="conservationStatus" 
-                            id="conservation-status" 
-                            required>
+                    <label for="habitat">Habitat</label>
+                    <input type="text" name="habitat" id="habitat" required>
+                </div>
+
+                <div class="form-item">
+                    <label for="diet">Diet</label>
+                    <select name="diet" id="diet">
                         <option disabled selected>Select one</option>
-                        <option value="EX">EX (Extinct)</option>
-                        <option value="EW">EW (Extinct in the Wild)</option>
-                        <option value="CR">CR (Critically Endangered)</option>
-                        <option value="EN">EN (Endangered)</option>
-                        <option value="VU">VU (Vulnerable)</option>
-                        <option value="NT">NT (Near Threatened)</option>
-                        <option value="LC">LC (Least Concern)</option>
-                        <option value="DD">DD (Data Deficient)</option>
-                        <option value="NE">NE (Not Evaluated)</option>
+                        <option value="Carnivore">Carnivore</option>
+                        <option value="Herbivore">Herbivore</option>
+                        <option value="Omnivore">Omnivore</option>
+                        <option value="Other/None">Other/None</option>
                     </select>
                 </div>
+
+                
             </div>
 
             <div id="form-buttons">
