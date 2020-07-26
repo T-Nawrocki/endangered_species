@@ -3,8 +3,10 @@
     --mid: #D0C1D7;
     --dark: #8D6A9F;
     --text: #343434;
-    --v-light: white;
-    --alt: #E5625E;
+    --warning: #E5625E;
+    --warning-dark: #AF211D;
+    --confirm: #7CAAF4;
+    --confirm-dark: #1052BC;
 }
 
 body {
@@ -15,7 +17,46 @@ body {
 }
 
 .button {
-    
+    height:40px;
+    width: 100px;
+    border:  2px lightgray solid, 1px black solid;
+    border-radius: 0;
+    /* box-shadow: 
+        0 2px 2px white,
+        0 -1px 1px gray,
+        inset 0 -2px 2px gray,
+        inset 0 2px 2px white;
+        font-weight: bold; */
+    overflow: hidden;
+    transition: background-position 300ms ease;
+}
+
+.button:hover {
+    background-position: 0;
+}
+
+#submit:hover {
+    background-position: 0;
+}
+
+#submit {
+    background: linear-gradient(
+                to right,
+                var(--confirm),
+                var(--confirm) 50%,
+                #E0E0E0 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+}
+
+.delete {
+    background: linear-gradient(
+                to right,
+                var(--warning),
+                var(--warning) 50%,
+                #E0E0E0 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
 }
 
 .heading, .content {
@@ -96,6 +137,11 @@ body {
 #pacific-checkbox-item {
     grid-column: 3 / 4;
     grid-row: 5 / 6;
+}
+
+#form-buttons {
+    display: flex;
+    justify-content: space-between;
 }
 
 #species-list {
