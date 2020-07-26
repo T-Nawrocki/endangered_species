@@ -37,11 +37,6 @@ const getSpeciesTitle = data => {
     return data.commonName ? data.commonName : data.scientificName;
 };
 
-const addListItem = (parent, heading, text) => {
-    const newListItem = document.createElement("li");
-    newListItem.innerHTML = `<b>${heading}</b>: ${text}`;
-    parent.appendChild(newListItem);
-};
 
 const conservationStatusDisplay = status => {
     const displayList = {
@@ -59,6 +54,20 @@ const conservationStatusDisplay = status => {
 };
 
 const rangeDisplay = rangeList => rangeList.join(", ");
+
+const speciesCount = () => {
+    const speciesList = document.querySelector("#species-list")
+    return speciesList ? speciesList.children.length : 0;
+};
+
+
+// HELPERS—CREATE/MANIPULATE DOM ELEMENTS
+
+const addListItem = (parent, heading, text) => {
+    const newListItem = document.createElement("li");
+    newListItem.innerHTML = `<b>${heading}</b>: ${text}`;
+    parent.appendChild(newListItem);
+};
 
 const createSpeciesList = () => {
     console.log("=".repeat(40));
@@ -151,14 +160,21 @@ const handleNewSpecies = function () {
 const handleDeleteAllClick = function () {
     console.log("=".repeat(40));
     console.log("Deleting all species in list...")
-    const speciesList = document.querySelector("#species-list");
-    speciesList.innerHTML = "";
+    const listContainer = document.querySelector("#species-list-container");
+    if (listContainer) {listContainer.remove();}
 };
 
 const handleDeleteClick = function () {
     console.log("=".repeat(40));
-    console.log("Deleting species entry...")
-    this.parentNode.remove();
+    if (speciesCount() === 1) {
+        console.log("Deleting last species in list (list will be removed)");
+        const listContainer = document.querySelector("#species-list-container")
+        listContainer.remove()
+    } else {
+        console.log("Deleting species entry...");
+        this.parentNode.parentNode.remove();
+        console.log(`${speciesCount()} species remaining.`);
+    }
 };
 
 
